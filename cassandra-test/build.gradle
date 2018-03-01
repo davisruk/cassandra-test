@@ -35,6 +35,5 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-cassandra')
-	compile('org.springframework.boot:spring-boot-starter-webflux')
     testImplementation 'junit:junit:4.12'
 }

@@ -1,4 +1,6 @@
-CREATE TABLE people_by_first_name(
+create keyspace people if not exists with replication = {'class' : 'SimpleStrategy', 'replication_factor' : 1};
+
+CREATE TABLE people_by_id_firstname_birthdate(
   first_name TEXT,
   date_of_birth TIMESTAMP,
   person_id UUID,
@@ -6,3 +8,12 @@ CREATE TABLE people_by_first_name(
   salary DOUBLE,
   PRIMARY KEY ((first_name), date_of_birth, person_id)
 ) WITH CLUSTERING ORDER BY (date_of_birth ASC, person_id DESC);
+
+CREATE TABLE people_by_id_birthdate_salary(
+  first_name TEXT,
+  date_of_birth TIMESTAMP,
+  person_id UUID,
+  last_name TEXT,
+  salary DOUBLE,
+  PRIMARY KEY ((date_of_birth), salary, person_id)
+) WITH CLUSTERING ORDER BY (salary DESC, person_id DESC);

@@ -1,4 +1,4 @@
-package uk.co.boots.cassandra.model;
+package uk.co.boots.cassandra.person.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -17,7 +17,7 @@ import lombok.Data;
 @AllArgsConstructor
 @Builder
 @PrimaryKeyClass
-public class PersonKey implements Serializable {
+public class PersonKeyIdFirstNameBirthDate implements Serializable {
 
 	private static final long serialVersionUID = 8802959217985842816L; 
 	
